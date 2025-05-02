@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  medical-diagnosis:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+    command: >
+      jupyter notebook
+      --ip=0.0.0.0
+      --port=8888
+      --allow-root
+      --no-browser
